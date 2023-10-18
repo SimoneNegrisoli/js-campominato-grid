@@ -19,8 +19,12 @@ button:hover{
     transform: scale(1.1);
 }
 
-.suqare{
+.square{
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid white;
+}
+
+.squarenew{
+    background-color: aqua;
 }

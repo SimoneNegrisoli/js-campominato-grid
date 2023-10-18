@@ -3,6 +3,7 @@ L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 Ogni cella ha un numero progressivo, da 1 a 100.
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+
 Bonus
 Solo se l'esercizio base funziona perfettamente: create una nuova cartella chiamata bonus e copiateci dentro tutti i files e cartelle dell'esercizio base tranne la cartella .git.
 Poi procedete ad implementare il bonus come segue.
@@ -17,3 +18,32 @@ Di cosa ho bisogno per generare la griglia
 Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 Le validazioni e i controlli possiamo farli anche in un secondo momento.*/
 
+const btngame = document.querySelector('button')
+btngame.addEventListener('click', campoMinato)
+
+function campoMinato(){
+    // mi prendo il campo da gioco
+    const playground = document.querySelector('.playground')
+    // mi creo il ciclo per i quadratini
+    for(let i = 0; i < 100; i++){
+        // mi creo il div
+        const square = document.createElement('div');
+        square.classList.add('square')
+        // chi devo appendere
+        playground.appendChild(square)
+    }
+    
+
+}
+
+
+
+
+// function squareCreator (){
+//     for(let i = 0; i < 100; i ++){
+//         // mi faccio creo il div e aggiungo la classe al div
+//         const square = document.createElement('div')
+//         square.classList.add('square');
+//     }
+    
+// }
