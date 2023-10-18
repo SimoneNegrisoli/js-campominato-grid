@@ -24,36 +24,35 @@ btngame.addEventListener('click', campoMinato)
 function campoMinato(){
     // mi prendo il campo da gioco
     const playground = document.querySelector('.playground')
-    let square;
+
+    // numero quadratini da generare
+    const numSquare = 100;
+
     // mi creo il ciclo per i quadratini
-    for(let i = 1; i < 101; i++){
-        // mi creo il div
-        square = document.createElement('div');
-        square.classList.add('square');
-        // chi devo appendere
-        playground.appendChild(square);
-        // metto il numero progressivo e do il bianco per vederlo
-        square.textContent = i;
-        square.style.color = 'white';
+    for(let i = 0; i < numSquare; i++){
+        // genero i quadratini
+        let square = createSquare (i);
 
-        // faccio cambiare colore al quadratino
-        square.addEventListener('click', squareChangeColor)
-        function squareChangeColor (){
-            square.classList.add('squarenew');
-        }
+        // appendo i quadratini nel playground
+        playground.append(square)
+
     }
-
-
 }
-
-
-
-
-// function squareCreator (){
-//     for(let i = 0; i < 100; i ++){
-//         // mi faccio creo il div e aggiungo la classe al div
-//         const square = document.createElement('div')
-//         square.classList.add('square');
-//     }
     
-// }
+
+
+// funzione per creare i quadratini
+
+function createSquare (squareInd){
+    // dove 
+    const square = document.createElement('div');
+    // aggiungo classe
+    square.classList.add('square')
+    // aggiungo numero indice
+    square.innerHTML = squareInd + 1;
+    square.addEventListener('click', function(){
+        square.classList.add('squarenew')
+    })
+    return square;
+}
+    
