@@ -24,15 +24,25 @@ btngame.addEventListener('click', campoMinato)
 function campoMinato(){
     // mi prendo il campo da gioco
     const playground = document.querySelector('.playground')
+    let square;
     // mi creo il ciclo per i quadratini
-    for(let i = 0; i < 100; i++){
+    for(let i = 1; i < 101; i++){
         // mi creo il div
-        const square = document.createElement('div');
-        square.classList.add('square')
+        square = document.createElement('div');
+        square.classList.add('square');
         // chi devo appendere
-        playground.appendChild(square)
+        playground.appendChild(square);
+        // metto il numero progressivo e do il bianco per vederlo
+        square.textContent = i;
+        square.style.color = 'white';
+
+        // faccio cambiare colore al quadratino
+        square.addEventListener('click', squareChangeColor)
+        function squareChangeColor (){
+            square.classList.add('squarenew');
+        }
     }
-    
+
 
 }
 
