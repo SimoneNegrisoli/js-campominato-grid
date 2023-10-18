@@ -1,0 +1,26 @@
+.playground{
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-container{
+    margin: 0 auto;
+    text-align: center;
+}
+button{
+    transition: all 0.3s;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.suqare{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid white;
+}
